@@ -500,22 +500,22 @@ if has('gui_running') || has('termguicolors') || &t_Co == 88 || &t_Co == 256
 	call <sid>X('gitcommitSelectedFile', s:hue_4,  '', '')
 	call <sid>X('gitcommitUnmergedFile', s:hue_6_2, '', '')
 	call <sid>X('gitcommitFile', '',  '', '')
-	hi link gitcommitNoBranch				gitcommitBranch
-	hi link gitcommitUntracked			gitcommitComment
-	hi link gitcommitDiscarded			gitcommitComment
-	hi link gitcommitSelected				gitcommitComment
+	hi link gitcommitNoBranch gitcommitBranch
+	hi link gitcommitUntracked gitcommitComment
+	hi link gitcommitDiscarded gitcommitComment
+	hi link gitcommitSelected gitcommitComment
 	hi link gitcommitDiscardedArrow gitcommitDiscardedFile
-	hi link gitcommitSelectedArrow	gitcommitSelectedFile
-	hi link gitcommitUnmergedArrow	gitcommitUnmergedFile
+	hi link gitcommitSelectedArrow gitcommitSelectedFile
+	hi link gitcommitUnmergedArrow gitcommitUnmergedFile
 
-	call <sid>X('SignifySignAdd',  s:hue_4, '', '')
+	call <sid>X('SignifySignAdd', s:hue_4, '', '')
 	call <sid>X('SignifySignChange', s:hue_6_2, '', '')
 	call <sid>X('SignifySignDelete', s:hue_5, '', '')
-	hi link GitGutterAdd		SignifySignAdd
+	hi link GitGutterAdd SignifySignAdd
 	hi link GitGutterChange SignifySignChange
 	hi link GitGutterDelete SignifySignDelete
-	call <sid>X('diffAdded',  s:hue_4, '', '')
-	call <sid>X('diffRemoved',  s:hue_5, '', '')
+	call <sid>X('diffAdded', s:hue_4, '', '')
+	call <sid>X('diffRemoved', s:hue_5, '', '')
 	" }}}
 
 	" JavaScript highlighting -------------------------------------------------{{{
@@ -543,13 +543,13 @@ if has('gui_running') || has('termguicolors') || &t_Co == 88 || &t_Co == 256
 	call <sid>X('jsModuleWords', s:hue_3,  '', '')
 	call <sid>X('jsModules', s:hue_3,  '', '')
 	call <sid>X('jsNoise', s:mono_2,  '', '')
-	call <sid>X('jsNull', 	s:hue_6,  '', '')
+	call <sid>X('jsNull', s:hue_6,  '', '')
 	call <sid>X('jsOperator', s:hue_3,  '', '')
 	call <sid>X('jsParens', s:mono_2,  '', '')
 	call <sid>X('jsStorageClass', s:hue_3,  '', '')
 	call <sid>X('jsTemplateBraces', s:hue_5_2, '', '')
 	call <sid>X('jsTemplateVar', s:hue_4,  '', '')
-	call <sid>X('jsThis', 	s:hue_5,  '', '')
+	call <sid>X('jsThis', s:hue_5,  '', '')
 	call <sid>X('jsUndefined', s:hue_6,  '', '')
 	call <sid>X('jsObjectValue', s:hue_2,  '', '')
 	call <sid>X('jsObjectKey', s:hue_1,  '', '')
@@ -576,18 +576,18 @@ if has('gui_running') || has('termguicolors') || &t_Co == 88 || &t_Co == 256
 	" }}}
 
 	" JSON highlighting -------------------------------------------------------{{{
-	call <sid>X('jsonCommentError', s:mono_1,  '', ''				 )
-	call <sid>X('jsonKeyword', s:hue_5,  '', ''				 )
-	call <sid>X('jsonQuote', s:mono_3,  '', ''				 )
-	call <sid>X('jsonTrailingCommaError', s:hue_5,  '', 'reverse' )
-	call <sid>X('jsonMissingCommaError', s:hue_5,  '', 'reverse' )
-	call <sid>X('jsonNoQuotesError', s:hue_5,  '', 'reverse' )
-	call <sid>X('jsonNumError', s:hue_5,  '', 'reverse' )
-	call <sid>X('jsonString', s:hue_4,  '', ''				 )
-	call <sid>X('jsonBoolean', s:hue_3,  '', ''				 )
-	call <sid>X('jsonNumber', s:hue_6,  '', ''				 )
-	call <sid>X('jsonStringSQError', s:hue_5,  '', 'reverse' )
-	call <sid>X('jsonSemicolonError', s:hue_5,  '', 'reverse' )
+	call <sid>X('jsonCommentError', s:mono_1,  '', '')
+	call <sid>X('jsonKeyword', s:hue_5,  '', '')
+	call <sid>X('jsonQuote', s:mono_3,  '', '')
+	call <sid>X('jsonTrailingCommaError', s:hue_5,  '', 'reverse')
+	call <sid>X('jsonMissingCommaError', s:hue_5,  '', 'reverse')
+	call <sid>X('jsonNoQuotesError', s:hue_5,  '', 'reverse')
+	call <sid>X('jsonNumError', s:hue_5,  '', 'reverse')
+	call <sid>X('jsonString', s:hue_4,  '', '')
+	call <sid>X('jsonBoolean', s:hue_3,  '', '')
+	call <sid>X('jsonNumber', s:hue_6,  '', '')
+	call <sid>X('jsonStringSQError', s:hue_5, '', 'reverse')
+	call <sid>X('jsonSemicolonError', s:hue_5, '', 'reverse')
 	" }}}
 
 	" Markdown highlighting ---------------------------------------------------{{{
