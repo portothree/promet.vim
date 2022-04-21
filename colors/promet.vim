@@ -3,30 +3,62 @@
 " License: GNU GPL v3.0
 " Version: 0.1
 
+" Color Reference {{{
+
+" +---------------------------------------------+
+" |  Color Name  |         RGB        |   Hex   |
+" |--------------+--------------------+---------|
+" | Black        | rgb(40, 44, 52)    | #282c34 |
+" |--------------+--------------------+---------|
+" | White        | rgb(171, 178, 191) | #abb2bf |
+" |--------------+--------------------+---------|
+" | Light Red    | rgb(224, 108, 117) | #e06c75 |
+" |--------------+--------------------+---------|
+" | Dark Red     | rgb(190, 80, 70)   | #be5046 |
+" |--------------+--------------------+---------|
+" | Green        | rgb(152, 195, 121) | #98c379 |
+" |--------------+--------------------+---------|
+" | Light Yellow | rgb(229, 192, 123) | #e5c07b |
+" |--------------+--------------------+---------|
+" | Dark Yellow  | rgb(209, 154, 102) | #d19a66 |
+" |--------------+--------------------+---------|
+" | Blue         | rgb(97, 175, 239)  | #61afef |
+" |--------------+--------------------+---------|
+" | Magenta      | rgb(198, 120, 221) | #c678dd |
+" |--------------+--------------------+---------|
+" | Cyan         | rgb(86, 182, 194)  | #56b6c2 |
+" |--------------+--------------------+---------|
+" | Gutter Grey  | rgb(76, 82, 99)    | #4b5263 |
+" |--------------+--------------------+---------|
+" | Comment Grey | rgb(92, 99, 112)   | #5c6370 |
+" +---------------------------------------------+
+
+" }}}
+
 " Global setup =============================================================={{{
 
 if exists("*<SID>X")
-  delf <SID>X
-  delf <SID>XAPI
-  delf <SID>rgb
-  delf <SID>color
-  delf <SID>rgb_color
-  delf <SID>rgb_level
-  delf <SID>rgb_number
-  delf <SID>grey_color
-  delf <SID>grey_level
-  delf <SID>grey_number
+	delf <SID>X
+	delf <SID>XAPI
+	delf <SID>rgb
+	delf <SID>color
+	delf <SID>rgb_color
+	delf <SID>rgb_level
+	delf <SID>rgb_number
+	delf <SID>grey_color
+	delf <SID>grey_level
+	delf <SID>grey_number
 endif
 
 hi clear
 syntax reset
 if exists('g:colors_name')
-  unlet g:colors_name
+	unlet g:colors_name
 endif
 let g:colors_name = 'promet'
 
 if !exists('g:allow_italics')
-  let g:allow_italics = 0
+	let g:allow_italics = 0
 endif
 
 let s:italic = ''
@@ -289,67 +321,36 @@ if has('gui_running') || has('termguicolors') || &t_Co == 88 || &t_Co == 256
 
 
   " Color definition --------------------------------------------------------{{{
-  let s:dark = 0
-  if &background ==# 'dark'
-    let s:dark = 1
-    let s:mono_1 = ['#abb2bf', '145']
-    let s:mono_2 = ['#828997', '102']
-    let s:mono_3 = ['#5c6370', '59']
-    let s:mono_4 = ['#4b5263', '59']
+	let s:dark = 1
+	let s:mono_1 = ['#abb2bf', '145']
+	let s:mono_2 = ['#828997', '102']
+	let s:mono_3 = ['#5c6370', '59']
+	let s:mono_4 = ['#4b5263', '59']
 
-    let s:hue_1  = ['#56b6c2', '73'] " cyan
-    let s:hue_2  = ['#61afef', '75'] " blue
-    let s:hue_3  = ['#c678dd', '176'] " purple
-    let s:hue_4  = ['#98c379', '114'] " green
+	let s:hue_1  = ['#56b6c2', '73'] " cyan
+	let s:hue_2  = ['#61afef', '75'] " blue
+	let s:hue_3  = ['#c678dd', '176'] " purple
+	let s:hue_4  = ['#98c379', '114'] " green
 
-    let s:hue_5   = ['#e06c75', '168'] " red 1
-    let s:hue_5_2 = ['#be5046', '130'] " red 2
+	let s:hue_5   = ['#e06c75', '168'] " red 1
+	let s:hue_5_2 = ['#be5046', '130'] " red 2
 
-    let s:hue_6   = ['#d19a66', '173'] " orange 1
-    let s:hue_6_2 = ['#e5c07b', '180'] " orange 2
+	let s:hue_6   = ['#d19a66', '173'] " orange 1
+	let s:hue_6_2 = ['#e5c07b', '180'] " orange 2
 
-    let s:syntax_bg     = ['#282c34', '16']
-    let s:syntax_gutter = ['#636d83', '60']
-    let s:syntax_cursor = ['#2c323c', '16']
+	let s:syntax_bg     = ['#282c34', '16']
+	let s:syntax_gutter = ['#636d83', '60']
+	let s:syntax_cursor = ['#2c323c', '16']
 
-    let s:syntax_accent = ['#528bff', '69']
+	let s:syntax_accent = ['#528bff', '69']
 
-    let s:vertsplit    = ['#181a1f', '233']
-    let s:special_grey = ['#3b4048', '16']
-    let s:visual_grey  = ['#3e4452', '17']
-    let s:pmenu        = ['#333841', '16']
-  else
-    let s:mono_1 = ['#494b53', '23']
-    let s:mono_2 = ['#696c77', '60']
-    let s:mono_3 = ['#a0a1a7', '145']
-    let s:mono_4 = ['#c2c2c3', '250']
+	let s:vertsplit    = ['#181a1f', '233']
+	let s:special_grey = ['#3b4048', '16']
+	let s:visual_grey  = ['#3e4452', '17']
+	let s:pmenu        = ['#333841', '16']
 
-    let s:hue_1  = ['#0184bc', '31'] " cyan
-    let s:hue_2  = ['#4078f2', '33'] " blue
-    let s:hue_3  = ['#a626a4', '127'] " purple
-    let s:hue_4  = ['#50a14f', '71'] " green
-
-    let s:hue_5   = ['#e45649', '166'] " red 1
-    let s:hue_5_2 = ['#ca1243', '160'] " red 2
-
-    let s:hue_6   = ['#986801', '94'] " orange 1
-    let s:hue_6_2 = ['#c18401', '136'] " orange 2
-
-    let s:syntax_bg     = ['#fafafa', '255']
-    let s:syntax_gutter = ['#9e9e9e', '247']
-    let s:syntax_cursor = ['#f0f0f0', '254']
-
-    let s:syntax_accent = ['#526fff', '63']
-    let s:syntax_accent_2 = ['#0083be', '31']
-
-    let s:vertsplit    = ['#e7e9e1', '188']
-    let s:special_grey = ['#d3d3d3', '251']
-    let s:visual_grey  = ['#d0d0d0', '251']
-    let s:pmenu        = ['#dfdfdf', '253']
-  endif
-
-  let s:syntax_fg = s:mono_1
-  let s:syntax_fold_bg = s:mono_3
+	let s:syntax_fg = s:mono_1
+	let s:syntax_fold_bg = s:mono_3
 
   " }}}
 
@@ -651,8 +652,6 @@ function! promet#highlight(group, fg, bg, attr)
 endfunction
 "}}}
 
-if exists('s:dark') && s:dark
-  set background=dark
-endif
+set background=dark
 
 " vim: set fdl=0 fdm=marker:
