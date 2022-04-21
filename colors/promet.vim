@@ -25,12 +25,12 @@ if exists('g:colors_name')
 endif
 let g:colors_name = 'promet'
 
-if !exists('g:one_allow_italics')
-  let g:one_allow_italics = 0
+if !exists('g:allow_italics')
+  let g:allow_italics = 0
 endif
 
 let s:italic = ''
-if g:one_allow_italics == 1
+if g:allow_italics == 1
   let s:italic = 'italic'
 endif
 
@@ -235,7 +235,7 @@ if has('gui_running') || has('termguicolors') || &t_Co == 88 || &t_Co == 256
   " sets the highlighting for the given group
   fun <SID>XAPI(group, fg, bg, attr)
     let l:attr = a:attr
-    if g:one_allow_italics == 0 && l:attr ==? 'italic'
+    if g:allow_italics == 0 && l:attr ==? 'italic'
       let l:attr= 'none'
     endif
 
